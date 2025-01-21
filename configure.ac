@@ -1,6 +1,6 @@
-AC_INIT([eviacam], 2.1.4)
+AC_INIT([eviacam],[2.1.4])
 AC_CONFIG_SRCDIR([src/eviacamapp.cpp])
-AC_PREREQ(2.61)
+AC_PREREQ([2.71])
 AM_CONFIG_HEADER(config.h)
 AM_INIT_AUTOMAKE
 COPYRIGHT="© 2008-19"
@@ -15,8 +15,8 @@ AC_DEFINE_UNQUOTED([PUBLISHER], ["$PUBLISHER"], [Publisher info])
 AC_ENABLE_SHARED
 AC_DISABLE_STATIC
 
-AC_PROG_LIBTOOL
-AM_PROG_LIBTOOL
+LT_INIT
+LT_INIT
 
 # Checks for programs.
 AC_PROG_CC
@@ -242,18 +242,18 @@ LTLIBOBJS=`echo X"$LIBOBJS"|\
            [$Xsed -e "s,\.[^.]* ,.lo ,g;s,\.[^.]*$,.lo,"]`
 AC_SUBST(LTLIBOBJS)
 
-AC_OUTPUT(
-	[Makefile] 
-	[po/Makefile.in] 
-	[man/Makefile] 
-	[doc/Makefile] 
-	[wxutil/Makefile] 
-	[creavision/Makefile] 
-	[creavision/libwebcam/Makefile] 
-	[simplelog/Makefile] 
-	[wxcamwindow/Makefile] 
-	[src/Makefile] 
-	[src/eviacamloader.c]
-	[win32/installer.iss]
-	[creavision/libwebcam/incvideodev.h]
-)
+AC_CONFIG_FILES([Makefile 
+	po/Makefile.in 
+	man/Makefile 
+	doc/Makefile 
+	wxutil/Makefile 
+	creavision/Makefile 
+	creavision/libwebcam/Makefile 
+	simplelog/Makefile 
+	wxcamwindow/Makefile 
+	src/Makefile 
+	src/eviacamloader.c
+	win32/installer.iss
+	creavision/libwebcam/incvideodev.h
+])
+AC_OUTPUT

@@ -2,7 +2,7 @@
 // Name:        viacamcontroller.cpp
 // Purpose:  
 // Author:      Cesar Mauri Loba (cesar at crea-si dot com)
-// Modified by: 
+// Modified by: Helen Griffiths (github:threepistons)
 // Created:     
 // Copyright:   (C) 2008-14 Cesar Mauri Loba - CREA Software Systems
 // 
@@ -227,9 +227,11 @@ CCamera* CViacamController::SetUpCamera()
 				strArray.Add(wxString(CCameraEnum::getDeviceName(0, i), wxConvLibc));
 			}
 
+			/* https://docs.wxwidgets.org/latest/classwx_single_choice_dialog.html#a3a9b70647d6e69ed2c67661e9a4a256b */
+			/* Turned "(int**)NULL" into "(void**)NULL" because the compiler barfed.  Link shows correct use. */
 			wxSingleChoiceDialog choiceDlg(
 				NULL, _("Choose the camera to use"), _T("Enable Viacam"), strArray, 
-				(char**)NULL, wxDEFAULT_DIALOG_STYLE | wxOK | wxCANCEL | wxCENTRE);
+				(void**)NULL, wxDEFAULT_DIALOG_STYLE | wxOK | wxCANCEL | wxCENTRE);
 
 			if (choiceDlg.ShowModal ()!= wxID_OK) return NULL;
 

@@ -2,7 +2,7 @@
 // Name:        wviacam.cpp
 // Purpose:  
 // Author:      Cesar Mauri Loba (cesar at crea-si dot com)
-// Modified by: 
+// Modified by: Helen Griffiths (github:threepistons)
 // Created:     
 // Copyright:   (C) 2008 Cesar Mauri Loba - CREA Software Systems
 // 
@@ -598,7 +598,6 @@ void WViacam::OnToolHelpClick( wxCommandEvent& event )
 		case (wxLANGUAGE_SPANISH_GUATEMALA):
 		case (wxLANGUAGE_SPANISH_HONDURAS):
 		case (wxLANGUAGE_SPANISH_MEXICAN):
-		case (wxLANGUAGE_SPANISH_MODERN):
 		case (wxLANGUAGE_SPANISH_NICARAGUA):
 		case (wxLANGUAGE_SPANISH_PANAMA):
 		case (wxLANGUAGE_SPANISH_PARAGUAY):
